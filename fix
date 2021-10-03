@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+pnpm isolate @isolate/package-1
+
+cp -r packages/package-3 packages/package-1/_isolated_/workspaces/packages
+
+# Assumes you have jq installed
+# See: https://stedolan.github.io/jq/
+echo "`jq '.devDependencies."@isolate/package-3"="workspace:*"' packages/package-1/_isolated_/workspaces/packages/package-2/package.json`" > packages/package-1/_isolated_/workspaces/packages/package-2/package.json
+
+cd packages/package-1/_isolated_
+
+pnpm install --frozen-lockfile

@@ -4,7 +4,8 @@
   "version": "1.0.0",
   "scripts": {
     "bootstrap": "pnpm install --frozen-lockfile && turbo run build --no-deps --includeDependencies --scope='@isolate/*'",
-    "isolate": "pnpm-isolate-workspace"
+    "isolate": "pnpm-isolate-workspace",
+    "fix": "./fix"
   },
   "devDependencies": {
     "pnpm-isolate-workspace": "^0.0.4",
