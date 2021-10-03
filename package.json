@@ -3,9 +3,11 @@
   "name": "isolate-workspaces",
   "version": "1.0.0",
   "scripts": {
-    "bootstrap": "turbo run build --no-deps --includeDependencies --scope='@isolate/*'"
+    "bootstrap": "pnpm install --frozen-lockfile && turbo run build --no-deps --includeDependencies --scope='@isolate/*'",
+    "isolate": "pnpm-isolate-workspace"
   },
   "devDependencies": {
+    "pnpm-isolate-workspace": "^0.0.4",
     "turbo": "^0.7.5"
   },
   "turbo": {
