@@ -56,6 +56,8 @@ Similarly, if you look at the `package.json` of `packages/package-1/_isolated_/w
 
 ## Fix
 
+### Option 1
+
 If you add `package-3` as a devDependency and copy over its source into the `workspaces` directory, running `pnpm install --frozen-lockfile` works as expected.
 
 ```shell
@@ -86,3 +88,25 @@ echo "`jq '.devDependencies."@isolate/package-3"="workspace:*"' packages/package
 ```
 
 Now, `pnpm install --frozen-lockfile`.
+
+### Option 2
+
+Change the dependency on `package-3` in `package-2` to be a dependency instead of a dev dependency. When isolating, it will be correctly copied over into `_isolated_`.
+
+```json
+{
+  "private": true,
+  "name": "@isolate/package-2",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "package-3"
+  },
+  "dependencies": {
+    "@isolate/package-3": "workspace:*",
+    "tslib": "^2.3.1"
+  }
+}
+
+```
