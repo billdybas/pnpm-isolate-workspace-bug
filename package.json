@@ -1,0 +1,20 @@
+{
+  "private": true,
+  "name": "isolate-workspaces",
+  "version": "1.0.0",
+  "scripts": {
+    "bootstrap": "turbo run build --no-deps --includeDependencies --scope='@isolate/*'"
+  },
+  "devDependencies": {
+    "turbo": "^0.7.5"
+  },
+  "turbo": {
+    "pipeline": {
+      "build": {
+        "dependsOn": [
+          "^build"
+        ]
+      }
+    }
+  }
+}
