@@ -1,0 +1,17 @@
+{
+  "private": true,
+  "name": "@isolate/package-1",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "dev": "tsc --noEmit --watch"
+  },
+  "dependencies": {
+    "@isolate/package-2": "workspace:*",
+    "tslib": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^16.10.2"
+  }
+}

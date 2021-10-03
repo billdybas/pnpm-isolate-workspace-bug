@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "name": "@isolate/package-3",
+  "version": "1.0.0",
+  "bin": "./build",
+  "devDependencies": {
+    "typescript": "^4.4.3"
+  }
+}
