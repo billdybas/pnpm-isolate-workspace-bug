@@ -54,6 +54,13 @@ Similarly, if you look at the `package.json` of `packages/package-1/_isolated_/w
 }
 ```
 
+I also notice the `pnpm-workspace.yaml` does _not_ contain `package-3`.
+
+```yaml
+packages:
+  - workspaces/packages/package-2
+```
+
 ## Fix
 
 ### Option 1

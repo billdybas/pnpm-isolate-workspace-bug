@@ -4,6 +4,9 @@ set -euo pipefail
 
 pnpm isolate @isolate/package-1
 
+# TODO: Is this needed?
+# echo '  - workspaces/packages/package-3' >> packages/package-1/_isolated_/pnpm-workspace.yaml
+
 cp -r packages/package-3 packages/package-1/_isolated_/workspaces/packages
 
 # Assumes you have jq installed
