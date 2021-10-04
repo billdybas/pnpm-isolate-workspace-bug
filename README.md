@@ -2,6 +2,10 @@
 
 https://github.com/Madvinking/pnpm-isolate-workspace
 
+Made for the following issues:
+- https://github.com/Madvinking/pnpm-isolate-workspace/issues/7
+- https://github.com/Madvinking/pnpm-isolate-workspace/issues/8
+
 ## Get Started
 
 This project assumes you have [pnpm](https://pnpm.io/) installed.
